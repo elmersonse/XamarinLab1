@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.MainPage">
+
+    <RelativeLayout x:Name="layout">
+        <Label x:Name="label1" 
+               Text="Косметичка" 
+               FontSize="44" 
+               WidthRequest="250" 
+               RelativeLayout.XConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=0.5,
+            Constant=-125}"/>
+        <Picker x:Name="picker" 
+                Title="Список продуктов"
+                FontSize="26"
+                WidthRequest="250" 
+                ItemsSource="{Binding Products}"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedIndexChanged="picker_SelectedIndexChanged"
+                RelativeLayout.XConstraint="{ConstraintExpression
+            Type=RelativeToView,
+            ElementName=label1,
+            Property=X,
+            Factor=1}"
+                RelativeLayout.YConstraint="{ConstraintExpression
+            Type=RelativeToView,
+            ElementName=label1,
+            Property=Y,
+            Factor=1,
+            Constant=50}"/>
+        <Button Text="Добавить продукт"
+                WidthRequest="250"
+                Clicked="Button_Clicked"
+                RelativeLayout.XConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=0.5,
+            Constant=-125}"
+                RelativeLayout.YConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=1,
+            Constant=-50}"/>
+    </RelativeLayout>
+    <!--<StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
+        <Label FontSize="16" Padding="30,24,30,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Learn more at "/>
+                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>-->
+
+</ContentPage>
